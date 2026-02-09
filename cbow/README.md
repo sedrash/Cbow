@@ -111,6 +111,7 @@ This project was created for educational purposes to understand:
 ## Author
 
 Sedra
+
 Machine Learning / NLP practice project
 
 ---
