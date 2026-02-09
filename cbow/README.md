@@ -6,21 +6,21 @@ No deep learning libraries (PyTorch / TensorFlow) are used.
 
 The model learns vector representations of words from a text corpus and allows:
 
-- Training CBOW embeddings
-- Visualizing embeddings with PCA
-- Finding similar words using cosine similarity
+- Training CBOW embeddings  
+- Visualizing embeddings with PCA  
+- Finding similar words using cosine similarity  
 
 ---
 
 ## Features
 
-- Text preprocessing (regex + NLTK stopwords)
-- Vocabulary building with `<UNK>` token
-- CBOW training with batch gradient descent
-- Custom softmax + cross-entropy loss
-- Word similarity search
-- PCA visualization
-- Fully vectorized forward pass
+- Text preprocessing (regex + NLTK stopwords)  
+- Vocabulary building with `<UNK>` token  
+- CBOW training with batch gradient descent  
+- Custom softmax + cross-entropy loss  
+- Word similarity search  
+- PCA visualization  
+- Fully vectorized forward pass  
 
 ---
 
@@ -30,69 +30,88 @@ Install dependencies:
 
 ```bash
 pip install numpy matplotlib scikit-learn nltk
+````
 
 Download NLTK stopwords:
 
+```python
 import nltk
 nltk.download("stopwords")
+```
 
-File structure
+---
 
+## File structure
+
+```
 project/
 │
-├── corpus.txt        # Training text
-├── cbow.py           # Main script
+├── corpus.txt        # Training text (not included)
+├── cbow.py          # Main script
 └── README.md
+```
 
-How to run
+---
 
-Put your text inside corpus.txt, then:
+## How to run
 
+Put your text inside `corpus.txt`, then:
+
+```bash
 python cbow.py
+```
 
 You will see:
 
-    Training loss per epoch
+* Training loss per epoch
+* Loss curve
+* PCA embedding visualization
+* Similar words for test inputs
 
-    Loss curve
+---
 
-    PCA embedding visualization
+## Model parameters
 
-    Similar words for test inputs
+You can modify:
 
-Model parameters
-
-You can change:
-
+```python
 EMBEDDING_DIM = 100
 VOCAB_SIZE = 5000
 WINDOW = 4
 BATCH_SIZE = 64
 EPOCHS = 10
 LEARNING_RATE = 0.05
+```
 
-Example output
+---
 
+## Example output
+
+```
 Word: 'man'
   - woman
   - boy
   - father
+```
 
-Learning goals
+---
+
+## Learning goals
 
 This project was created for educational purposes to understand:
 
-    CBOW architecture
+* CBOW architecture
+* Backpropagation
+* Embedding training
+* Cosine similarity
+* PCA visualization
 
-    Backpropagation
+---
 
-    Embedding training
+## Author
 
-    Cosine similarity
-
-    PCA visualization
-
-
-
-Author: Sedra (Cybersecurity Student – 4th Year)
+Sedra
 Machine Learning / NLP practice project
+
+---
+
